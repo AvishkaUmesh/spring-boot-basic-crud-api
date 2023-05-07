@@ -36,23 +36,16 @@ public class EmployeeDAOImpl implements EmployeeDAO {
 	}
 
 	@Override
-	@Transactional
-	public void save(Employee employee) {
-		entityManager.persist(employee);
+	public Employee save(Employee employee) {
+		// save or update the employee
+		// if id == 0 then save/insert else update
+		return entityManager.merge(employee);
 	}
 
 	@Override
-	@Transactional
 	public void deleteById(int id) {
 		Employee employee = entityManager.find(Employee.class, id);
 		entityManager.remove(employee);
-	}
-
-	@Override
-	@Transactional
-	public void update(Employee employee) {
-		entityManager.merge(employee);
-
 	}
 
 }
