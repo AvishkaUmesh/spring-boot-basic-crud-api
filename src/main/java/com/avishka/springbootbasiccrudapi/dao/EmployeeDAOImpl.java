@@ -9,7 +9,6 @@ import com.avishka.springbootbasiccrudapi.entity.Employee;
 
 import jakarta.persistence.EntityManager;
 import jakarta.persistence.TypedQuery;
-import jakarta.transaction.Transactional;
 
 @Repository
 public class EmployeeDAOImpl implements EmployeeDAO {
